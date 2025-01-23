@@ -57,6 +57,21 @@ To verify the updated configuration:
     Open your CouchDB dashboard (http://example.com:5984/_utils).
     Check that the settings are applied under /_node/_local/_config.
 
+## Usage with Obsidian
+
+1. Get a shell on the container. From the host:
+   ```bash
+   docker-compose exec couchdb-obsidian-livesync /bin/bash
+   ```
+2. Generate a setup URI. From `/scripts` on the container:
+   ```bash
+   deno run -A generate_setupuri.ts
+   ```
+   Make note of both of these as you will need them to configure your Obsidian clients.
+3. Install and enable the "Self-hosted LiveSync" plugin. From Settings > Community plugins, browse community plugins and search for the plugin by name.
+4. Run the initial setup and provide it your generated setup URI and passphrase.
+5. Select the appropriate button depending on whether this is a first-time setup of your sync database or if this is a new sync client to an existing database.
+
 ## License
 
 This repository is licensed under the MIT License. Contributions are welcome!
