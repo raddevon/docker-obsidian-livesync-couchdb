@@ -40,7 +40,7 @@ services:
     container_name: couchdb-obsidian-livesync
     restart: always
     environment:
-      SERVER_URL: ${SERVER_URL}
+      SERVER_DOMAIN: ${SERVER_URL}
       COUCHDB_USER: ${COUCHDB_USER}
       COUCHDB_PASSWORD: ${COUCHDB_PASSWORD}
       COUCHDB_DATABASE: ${COUCHDB_DATABASE}
